@@ -54,7 +54,7 @@ jobs:
           ./scripts/feeds install -a
           
           # 复制你自己的配置文件
-          cp ../defconfig/rax3000m-openclash.config .config
+          cp ../defconfig/rax3000m-noopenclash.config .config
           # 下载编译所需的源码包
           make download -j$(nproc)
           # 开始编译
@@ -94,7 +94,7 @@ jobs:
             - 编译编号：#${{ github.run_number }}
             - 设备：CMCC RAX3000M (eMMC / NAND)
             - 内核：6.12（25.12 版本）
-            - 包含插件：OpenClash、磁盘管理、Argon 主题等
+            - 包含插件：磁盘管理、Argon 主题等
             - 上游：chasey-dev/immortalwrt-mt798x-rebase
           files: openwrt/bin/targets/mediatek/filogic/*
         env:
